@@ -6,7 +6,7 @@
 #include "main.h"
 #include <string>
 enum speed_multipliers{
-    ONE = 100,
+    ONE = 120,
     TWO = 50,
     FIVE = 20,
     TEN = 10
@@ -21,6 +21,7 @@ speed_multipliers speed;
 int frameNum = 0;
 bool is_pause = false;
 bool ended;
+std::string path;
 uint8_t decodeChar(char c) {
     if (c >= '0' && c <= '9') return c - '0';
     if (c >= 'A' && c <= 'Z') return (c - 'A')+10;
@@ -32,6 +33,7 @@ uint8_t decodeChar(char c) {
 void end(){
     ended = true;
 }
+void link(const std::string& path);
 void paintFrame(const std::string& frame) { ///BTW FRAMES ARE SO HUGE IF WE LEFT IT AS A COPY WE WOULD LITTERALLY RUN OUT OF MEMORY
     int pixelx = 0;
     int pixely = 0;
@@ -43,7 +45,7 @@ void paintFrame(const std::string& frame) { ///BTW FRAMES ARE SO HUGE IF WE LEFT
         for (int bit = 5; bit >=0; bit--) { //take 6 bits not 5. if you take 5 it will do sone weird alignment artifact
             bool white = (val >> bit) & 1; //optimisation @.@
             if (white) {
-                pros::screen::set_pen(pros::Color::white); //technically i could make this any color i want? but for now its the classics
+                pros::screen::set_pen(pros::Color::wheat); //technically i could make this any color i want? but for now its the classics
             } else {
                 pros::screen::set_pen(pros::Color::black);
             }
@@ -65,6 +67,9 @@ void paintFrame(const std::string& frame) { ///BTW FRAMES ARE SO HUGE IF WE LEFT
    pros::delay(speed); //speed!!! kachow >.<
 }
 public:
+void set_path(const std::string& new_path){
+    this -> path = new_path;
+}
 bool is_done(){
     return ended;
 }
