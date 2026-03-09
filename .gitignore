@@ -6,11 +6,17 @@
 *.bin
 *.elf
 *.dll
+*.mp4
+*.mp3
+*.png
+*.jpg
+*.jpeg
+*.txt
 
 setup.bat
 setup.ps1
 build_setup.ps1
-
+bad_apple_encoder.cpp
 # PROS
 bin/
 .vscode/
