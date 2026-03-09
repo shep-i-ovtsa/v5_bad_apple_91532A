@@ -5,6 +5,11 @@
 # Executables
 *.bin
 *.elf
+*.dll
+
+setup.bat
+setup.ps1
+build_setup.ps1
 
 # PROS
 bin/
