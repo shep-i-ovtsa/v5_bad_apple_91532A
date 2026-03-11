@@ -11,9 +11,11 @@ void bad_apple::link(const std::string& file_path){
         return;
     }
     std::string line;
-    std::getline(file, line);
+
+    std::getline(file, line); 
     parseHeader(line);
-    std::getline(file, line); // skip metadata
+
+    std::getline(file, line); 
 
     while (std::getline(file, line)) {
         uint32_t frame_start = pros::millis();
@@ -25,6 +27,7 @@ void bad_apple::link(const std::string& file_path){
     }
     file.close();
 }
+
 void bad_apple::play(void *param){
     bad_apple* self = static_cast<bad_apple*>(param);
     self -> link(self -> path);

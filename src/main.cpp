@@ -1,7 +1,7 @@
 #include "main.h"
 #include "bad_apple.hpp" //btw tiny jpeg library is here because i was trying to use jpeg files as frames before finding this dude. os dw about it
 #include "pros/colors.hpp"
-    bad_apple apple;
+bad_apple apple;
 void initalise(){
  
 }

@@ -12,7 +12,8 @@
 *.jpg
 *.jpeg
 *.txt
-
+*.apple
+*.appler
 setup.bat
 setup.ps1
 build_setup.ps1
